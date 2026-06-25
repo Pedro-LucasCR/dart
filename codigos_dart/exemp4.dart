@@ -1,53 +1,22 @@
-import 'dart:io';
-import 'dart:math';
+void main(){
+Funcionario f1 = Funcionario('João', 3000.0);
+Funcionario f2 = Funcionario('Maria', 3500.0, '(35)99876-9080');
+f1.mostrarDados();
+f2.mostrarDados();
+}
 
-void main() {
-  var vogais = [];
-  List notas = [7.5, 10, 6.7, 8.0, 9.0];
-  List<String> nomes = ["Fábio", "Maria", "João", "Ana"];
-  print(notas);
-  print(notas[2]);
-  print(notas.first);
-  print(notas.last);
-  for (int i = 0; i < notas.length; i++) {
-    print("Nota $(i+1): ${notas[i]}");
+class Funcionario {
+  String nome;
+  double salario;
+  String? telefone;
+
+  Funcionario(this.nome, this.salario, [this.telefone]);
+
+  void mostrarDados() {
+    print('Nome: $nome');
+    print('Salário: R\$ $salario');
+    if (telefone != null) {
+      print('Telefone: $telefone');
+    }
   }
-  for (var aux in notas) {
-    print("Nota: $aux");
-  }
-  notas.forEach(print);
-  print(notas.isEmpty);
-  print(vogais.isNotEmpty);
-  //Ordenar os valores da lista
-  List numeros = [5, 2, 9, 1, 3];
-  print(numeros);
-  numeros.sort((a, b) => a.compareTo(b));
-  print(nomes);
-  nomes.sort((a, b) => b.compareTo(a));
-  print(nomes);
-  nomes.shuffle();
-  print(nomes);
-  //analisar se um elemento existe na lista
-  print(nomes.contains("Fábio"));
-  print(nomes.contains( "Carlos"));
-  //Inserindo valores na lista
-  print(vogais);
-  vogais.add("a");
-  print(vogais);
-  vogais.addAll(["e", "i", "o", "u"]);
-  print(vogais);
-  vogais.insert(1, "Y");
-  print(vogais);
-  List numeros2 = [];
-  for (int i = 1; i <= 5; i++) {
-  int valor = int.parse(stdin.readLineSync()!);
-  numeros2.add(valor);
-  }
-  print(numeros2);
-  //Removendo elementos da lista
-  print(vogais);
-  vogais.remove("Y");
-  print(vogais);
-  vogais.removeAt(2);
-  print(vogais);
 }
