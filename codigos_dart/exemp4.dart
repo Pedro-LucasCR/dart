@@ -19,4 +19,4 @@ class Funcionario {
       print('Telefone: $telefone');
     }
   }
-}
+} 
